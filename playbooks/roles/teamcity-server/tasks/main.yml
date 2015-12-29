@@ -1,0 +1,14 @@
+- name: Download sources
+  get_url: url=https://download.jetbrains.com/teamcity/TeamCity-{{ version }}.tar.gz dest=/tmp/teamcity.tar.gz validate_certs=False
+
+- name: Unarchive sources
+  unarchive: src=/tmp/teamcity.tar.gz dest=/opt/
+
+- name: Change location
+  shell: mv /opt/TeamCity /opt/teamcity-server
+
+- name: Remove arhive
+  file: path=/tmp/teamcity.tar.gz state=absent
+
+- name: Add config file
+  template: src=server.xml dest=/opt/teamcity-server/conf/server.xml

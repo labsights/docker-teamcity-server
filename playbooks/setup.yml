@@ -1,0 +1,7 @@
+- name: Setup TeamCity Server
+  remote_user: root
+  sudo: no
+  hosts: localhost
+  roles:
+    - { role: java }
+    - { role: teamcity-server, version: 9.1.5 }
