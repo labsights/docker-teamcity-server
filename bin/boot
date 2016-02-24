@@ -1,0 +1,6 @@
+#!/bin/bash
+set -e
+
+#bootstrap code goes here
+
+exec gosu root supervisord -n -c /etc/supervisor/supervisord.conf

@@ -12,3 +12,6 @@
 
 - name: Add config file
   template: src=server.xml dest=/opt/teamcity-server/conf/server.xml
+
+- name: Add supervisor config
+  template: src=supervisor-teamcity-server.conf dest=/etc/supervisor/conf.d/teamcity-server.conf

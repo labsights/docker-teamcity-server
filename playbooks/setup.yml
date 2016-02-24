@@ -4,4 +4,4 @@
   hosts: localhost
   roles:
     - { role: java }
-    - { role: teamcity-server, version: 9.1.5 }
+    - { role: teamcity-server, version: 9.1.6 }
